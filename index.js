@@ -79,6 +79,7 @@ const newID = async function(){
        return response.json(); })
       .then(function(json) {
         console.log(de(json.data))
+        return de(json.data)
       });
     ramReg = await getReg("test", id)
   }
