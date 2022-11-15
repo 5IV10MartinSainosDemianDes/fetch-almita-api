@@ -29,12 +29,16 @@ const getTest = async function(){
 const getDB = async function(col){
   const ram = db.collection(col);
   console.log(col)
-  console.log("uwu")
   const get = await ram.get().then((querySnapshot) => {
     return querySnapshot
   })
   const list = get.docs.map(doc => doc.data());
   return list
+}
+
+const setDB = async function(col, doc, value){
+  const ram = db.collection(col);
+  await ram.doc(doc).update({test:value})
 }
 //end of db
 
