@@ -44,9 +44,13 @@ const getDB = async function(col){
 
 const getReg = async function(col, reg){
   const ram = db.collection(col);
-  let getting = await ram.where(firebase.firestore.FieldPath.documentId(), '==', reg).get()
+  let getting = ""
+  let query = await ram.doc(reg).get()
   console.log("get reg "+reg)
   console.log(getting)
+  if(query.test != void(0)){
+    getting = query.test
+  }
   return getting
 }
 
