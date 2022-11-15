@@ -1,9 +1,11 @@
-import "express"
-import * as firebase from "./js/firebase"
+const express = require("express");
+const firebase = require("./js/firebase")
 
-import fetch from "node-fetch"
+const fetch = require("node-fetch")
 
-import "./js/sec"
+const sec = require("./js/sec")
+const de=sec.de
+
 var db = firebase.firestore
 
 var app = express();
