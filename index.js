@@ -1,4 +1,4 @@
-const express = require("express");
+import "express"
 const firebase = require("./js/firebase")
 
 import fetch from "node-fetch"
