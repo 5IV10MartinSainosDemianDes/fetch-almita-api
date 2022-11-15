@@ -1,8 +1,6 @@
 const express = require("express");
 const firebase = require("./js/firebase")
 
-const fetch = require("node-fetch")
-
 const sec = require("./js/sec")
 const de=sec.de
 
