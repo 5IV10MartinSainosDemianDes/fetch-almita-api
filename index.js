@@ -65,7 +65,7 @@ app.get("/new", async (req, res, next) => {
   var value = req.query.value
   var newid = await newID()
   await setDB("test",newid,value)
-  res.json({data:"1"});
+  res.json({data:newid});
 });
 
 const newID = async function(){
@@ -81,6 +81,7 @@ const newID = async function(){
       });
     ramReg = await getReg("test", id)
   }
+  return id
 }
 
 //test
