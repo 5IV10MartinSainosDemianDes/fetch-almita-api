@@ -62,7 +62,7 @@ app.get("/get", async (req, res, next) => {
 
 //db new
 app.get("/new", async (req, res, next) => {
-  var value = req.query.value
+  var value = decodeURI(req.query.value)
   var newid = await newID()
   await setDB("test",newid,value)
   res.json({data:newid});
