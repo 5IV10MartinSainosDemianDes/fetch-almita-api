@@ -78,7 +78,6 @@ const newID = async function(){
     .then(function(response) {
        return response.json(); })
       .then(function(json) {
-        $("#genPass").val(de(json.data))
         console.log(de(json.data))
       });
     ramReg = await getReg("test", id)
