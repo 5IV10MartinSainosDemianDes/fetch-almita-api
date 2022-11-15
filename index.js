@@ -81,6 +81,8 @@ const newID = async function(){
         console.log(de(json.data))
         return de(json.data)
       });
+      console.log("new reg get")
+      console.log(ramReg)
     ramReg = await getReg("test", id)
   }
   return id
