@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
+const firebase = require('firebase/compat/app');
+const auth = require('firebase/compat/auth');
+const firestore = require('firebase/compat/firestore');
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
