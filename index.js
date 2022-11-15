@@ -1,6 +1,9 @@
 const express = require("express");
 const firebase = require("./js/firebase")
 
+const sec = require("./js/sec")
+const de=sec.de
+
 var db = firebase.firestore
 
 var app = express();
@@ -37,6 +40,12 @@ const getDB = async function(col){
   return list
 }
 
+const getReg = async function(col, reg){
+  const ram = db.collection(col);
+  let getting = await ram.get(reg)
+  return getting
+}
+
 const setDB = async function(col, doc, value){
   const ram = db.collection(col);
   await ram.doc(doc).update({test:value})
@@ -49,6 +58,29 @@ app.get("/get", async (req, res, next) => {
   var list = await getDB(colName)
   res.json({data:list});
 });
+
+//db new
+app.get("/new", async (req, res, next) => {
+  var value = req.query.value
+  var newid = await newID()
+  await setDB("test",newid,value)
+  res.json({data:"1"});
+});
+
+const newID = async function(){
+  let id = "a"
+  let ramReg = await getReg("test", id)
+  while(ramReg!={}){
+    id=fetch("https://securitypassword.cyclic.app/generate/?low=true&up=true&n=false&num=false&char=false&rect=false&len=10", {method : 'GET',})
+    .then(function(response) {
+       return response.json(); })
+      .then(function(json) {
+        $("#genPass").val(de(json.data))
+        console.log(de(json.data))
+      });
+    ramReg = await getReg("test", id)
+  }
+}
 
 //test
 app.get("/", async (req, res, next) => {
