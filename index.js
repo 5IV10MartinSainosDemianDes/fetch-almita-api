@@ -1,6 +1,7 @@
 const express = require("express");
-import {firestore as db}  from './firebase' 
-import firebase from './firebase';
+const firebase = require("./js/firebase")
+
+var db = firebase.firestore
 
 var app = express();
 
