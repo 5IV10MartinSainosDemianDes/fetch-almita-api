@@ -72,7 +72,7 @@ const newID = async function(){
   let id = "a"
   let ramReg = await getReg("test", id)
   while(ramReg!={}){
-    id=fetch("https://securitypassword.cyclic.app/generate/?low=true&up=true&n=false&num=false&char=false&rect=false&len=10", {method : 'GET',})
+    id=await fetch("https://securitypassword.cyclic.app/generate/?low=true&up=true&n=false&num=false&char=false&rect=false&len=10", {method : 'GET',})
     .then(function(response) {
        return response.json(); })
       .then(function(json) {
