@@ -1,7 +1,7 @@
 const express = require("express");
 const firebase = require("./js/firebase")
 
-const fetch = require("node-fetch")
+import fetch from "node-fetch"
 
 const sec = require("./js/sec")
 const de=sec.de
