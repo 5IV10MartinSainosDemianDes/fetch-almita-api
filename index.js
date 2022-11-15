@@ -44,7 +44,9 @@ const getDB = async function(col){
 
 const getReg = async function(col, reg){
   const ram = db.collection(col);
-  let getting = await ram.get(reg)
+  let getting = await ram.where(firebase.firestore.FieldPath.documentId(), '==', reg).get()
+  console.log("get reg "+reg)
+  console.log(getting)
   return getting
 }
 
@@ -73,7 +75,7 @@ app.get("/new", async (req, res, next) => {
 const newID = async function(){
   let id = "a"
   let ramReg = await getReg("test", id)
-  while(ramReg!={}){
+  while(ramReg==""){
     id=await fetch("https://securitypassword.cyclic.app/generate/?low=true&up=true&n=false&num=false&char=false&rect=false&len=10", {method : 'GET',})
     .then(function(response) {
        return response.json(); })
