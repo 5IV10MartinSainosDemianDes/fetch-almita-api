@@ -50,10 +50,10 @@ const getReg = async function(col, reg){
   console.log(getting)
   console.log("query")
   console.log(query)
-  let res = query.data().test
+  let res = query.data()
   console.log(res)
-  if(res != void(0)){
-    getting = res
+  if(res.test != void(0)){
+    getting = res.test
   }
   return getting
 }
@@ -101,8 +101,6 @@ const newID = async function(){
   while(ramReg!=""){
     id=await fetch("https://securitypassword.cyclic.app/generate/?low=true&up=true&n=false&num=false&char=false&rect=false&len=10", {method : 'GET',})
     .then(function(response) {
-      console.log("generate")
-      console.log(response)
        return response.json(); })
       .then(function(json) {
         console.log(de(json.data))
