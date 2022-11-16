@@ -61,7 +61,7 @@ const setDB = async function(col, doc, value){
 }
 const newDB = async function(col, doc, value){
   const ram = db.collection(col);
-  let set = await db.setDoc(db.doc(db, col, doc),{test:value}).catch((error)=>{console.log(error);});
+  let set = await ram.doc(doc).set({test:value})
   console.log(set)
 }
 //end of db
