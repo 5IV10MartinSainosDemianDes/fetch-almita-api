@@ -49,7 +49,7 @@ const getReg = async function(col, reg){
   console.log("get reg "+reg)
   console.log(getting)
   console.log("query")
-  console.log(query.DocumentSnapshot)
+  console.log(query._document)
   if(query.test != void(0)){
     getting = query.test
   }
