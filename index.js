@@ -41,6 +41,7 @@ const getDB = async function(col){
   console.log("get all")
   console.log(get.docs)
   for(var doc in get.docs){
+    console.log(get.docs[doc])
     console.log(get.docs[doc].data())
   }
   const list = get.docs.map(doc => doc.data());
