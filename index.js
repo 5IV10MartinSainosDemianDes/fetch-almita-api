@@ -57,11 +57,13 @@ const getReg = async function(col, reg){
 const setDB = async function(col, doc, value){
   const ram = db.collection(col);
   let set = await ram.doc(doc).update({test:value})
+  console.log("set")
   console.log(set)
 }
 const newDB = async function(col, doc, value){
   const ram = db.collection(col);
   let set = await ram.doc(doc).set({test:value})
+  console.log("new")
   console.log(set)
 }
 //end of db
