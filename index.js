@@ -52,10 +52,10 @@ const getReg = async function(col, reg){
   console.log(query)
   let res = query.data().test
   console.log(res)
-  if(query.test != void(0)){
-    getting = query.test
+  if(res != void(0)){
+    getting = res
   }
-  return res
+  return getting
 }
 
 const setDB = async function(col, doc, value){
