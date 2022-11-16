@@ -50,8 +50,8 @@ const getReg = async function(col, reg){
   console.log(getting)
   console.log("query")
   console.log(query)
-  let res = query.data.test
-  console.log(res)
+  let res = query.data
+  console.log(JSON.stringify(res))
   if(query.test != void(0)){
     getting = query.test
   }
