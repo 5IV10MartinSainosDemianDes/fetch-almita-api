@@ -48,6 +48,8 @@ const getReg = async function(col, reg){
   let query = await ram.doc(reg).get()
   console.log("get reg "+reg)
   console.log(getting)
+  console.log("query")
+  console.log(query)
   if(query.test != void(0)){
     getting = query.test
   }
