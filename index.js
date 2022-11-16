@@ -106,7 +106,7 @@ app.get("/new", async (req, res, next) => {
 
 //db delete
 app.get("/del", async (req, res, next) => {
-  await delDB("test",newid)
+  await delDB("test",req.query.id)
   res.json({data:"del"});
 });
 
