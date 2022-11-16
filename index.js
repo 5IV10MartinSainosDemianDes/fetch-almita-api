@@ -46,7 +46,6 @@ const getReg = async function(col, reg){
   const ram = db.collection(col);
   let getting = ""
   let query = await ram.doc(reg).get()
-  quey = JSON.parse(query)
   console.log("get reg "+reg)
   console.log(getting)
   console.log("query")
