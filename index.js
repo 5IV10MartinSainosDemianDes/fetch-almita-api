@@ -38,6 +38,8 @@ const getDB = async function(col){
   const get = await ram.get().then((querySnapshot) => {
     return querySnapshot
   })
+  console.log("get all")
+  console.log(get)
   const list = get.docs.map(doc => doc.data());
   return list
 }
