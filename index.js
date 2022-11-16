@@ -72,6 +72,12 @@ const newDB = async function(col, doc, value){
   console.log("new")
   console.log(set)
 }
+const delDB = async function(col, doc){
+  const ram = db.collection(col);
+  let del = await ram.doc(doc).delete()
+  console.log("delete")
+  console.log(del)
+}
 //end of db
 
 //db get
@@ -87,6 +93,12 @@ app.get("/new", async (req, res, next) => {
   var newid = await newID()
   await newDB("test",newid,value)
   res.json({data:newid});
+});
+
+//db delete
+app.get("/del", async (req, res, next) => {
+  await delDB("test",newid)
+  res.json({data:"del"});
 });
 
 //db new
