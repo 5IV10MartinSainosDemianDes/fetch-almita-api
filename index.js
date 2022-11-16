@@ -39,7 +39,7 @@ const getDB = async function(col){
     return querySnapshot
   })
   console.log("get all")
-  console.log(get)
+  console.log(get.docs)
   const list = get.docs.map(doc => doc.data());
   return list
 }
