@@ -52,8 +52,10 @@ const getReg = async function(col, reg){
   console.log(query)
   let res = query.data()
   console.log(res)
-  if(res.test != void(0)){
+  try{
     getting = res.test
+  }catch{
+    console.log("not found")
   }
   return getting
 }
