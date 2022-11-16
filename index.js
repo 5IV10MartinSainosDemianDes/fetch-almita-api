@@ -49,7 +49,7 @@ const getReg = async function(col, reg){
   console.log("get reg "+reg)
   console.log(getting)
   console.log("query")
-  console.log(query)
+  console.log(JSON.stringify(query))
   if(query.test != void(0)){
     getting = query.test
   }
@@ -83,6 +83,14 @@ app.get("/new", async (req, res, next) => {
   var newid = await newID()
   await newDB("test",newid,value)
   res.json({data:newid});
+});
+
+//db new
+app.get("/set", async (req, res, next) => {
+  var id = decodeURI(req.query.id)
+  var value = decodeURI(req.query.value)
+  await setDB("test",id,value)
+  res.json({data:"set"});
 });
 
 const newID = async function(){
