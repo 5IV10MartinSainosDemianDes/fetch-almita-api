@@ -50,7 +50,7 @@ const getReg = async function(col, reg){
   console.log(getting)
   console.log("query")
   console.log(query)
-  let res = query.DocumentSnapshot
+  let res = query.data
   console.log(res)
   if(query.test != void(0)){
     getting = query.test
